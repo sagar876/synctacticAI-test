@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../Components/Header/header";
-import MapComponent from "../../Components/Map/map";
+import GoogleMap from "../../Components/GoogleMap/googleMap";
 import NavBar from "../../Components/NavigationBar/navbar";
 import TextBox from "../../Components/CustomComponents/textbox";
 
@@ -26,6 +26,9 @@ export default class HomePage extends Component {
           className={navbarOpen ? "navbar--wrapper open" : "navbar--wrapper"}
         >
           {navbarOpen ? <NavBar /> : null}
+        </div>
+        <div className="map--container">
+            <GoogleMap />
         </div>
       </div>
     );
