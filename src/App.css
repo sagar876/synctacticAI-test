@@ -1,0 +1,28 @@
+.App-header {
+  height: 70px;
+  background-color: #24292e;
+}
+.nav-btn div {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+.nav-btn{
+  float: right;
+  margin-top: 12px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.navbar--wrapper {
+  position: fixed;
+  left: -300px;
+  top: 70px;
+  height: 100%;
+  background-color: #031628;
+  width: 300px;
+  transition: 0.2s;
+}
+.navbar--wrapper.open{
+  left: 0;
+}
