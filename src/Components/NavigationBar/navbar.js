@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const navigationData = [
   {
@@ -20,22 +20,22 @@ const navigationData = [
 ];
 
 const listItemStyle = {
-  "list-style-type": "none",
+  "listStyleType": "none",
   color: "#fff",
   margin: "10px 0",
   cursor: "pointer"
 };
 
-export default class NavBar extends Component {
-  render() {
-    return (
-      <ul>
-        {navigationData.map(list => (
-          <li key={list.id} style={listItemStyle}>
-            {list.name}
-          </li>
-        ))}
-      </ul>
-    );
-  }
-}
+const NavBar = props => {
+  return (
+    <ul>
+      {navigationData.map(list => (
+        <li key={list.id} style={listItemStyle}>
+          {list.name}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default NavBar;

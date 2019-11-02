@@ -7,6 +7,8 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/*--------Navigation Bar --------*/
 .nav-btn div {
   width: 35px;
   height: 5px;
@@ -27,11 +29,15 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #031628;
   width: 300px;
   transition: 0.2s;
-  z-index: 9;
+  z-index: 9; 
 }
 .navbar--wrapper.open {
   left: 0;
 }
+/*--------Navigation Bar EOC--------*/
+
+
+/*--------Maps and Textbox--------*/
 .map--container > div > div {
   position: relative !important;
 }
@@ -46,3 +52,4 @@ input[type="number"]::-webkit-outer-spin-button {
 .textbox--container button {
   cursor: pointer;
 }
+/*--------Maps and Textbox EOC--------*/

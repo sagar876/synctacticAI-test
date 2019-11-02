@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 const mapStyles = {
   width: "400px",
@@ -6,7 +6,7 @@ const mapStyles = {
   position: "relative",
   margin: "20px auto"
 };
-export class GoogleMap extends Component {
+export class GoogleMap extends React.PureComponent {
   render() {
     const { lat, lng } = this.props;
     return (
@@ -18,7 +18,7 @@ export class GoogleMap extends Component {
           lat,
           lng
         }}
-        center={{lat,lng}}
+        center={{ lat, lng }}
       >
         <Marker position={{ lat, lng }} />
       </Map>

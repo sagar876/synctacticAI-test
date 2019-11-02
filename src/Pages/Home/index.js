@@ -37,16 +37,15 @@ export default class HomePage extends Component {
     }
   };
 
+  handleEnterKeyPress = e => {
+    if (e.which === 13) this.setMapLocation();
+  };
+
   render() {
     const { navbarOpen, lat, lng } = this.state;
     return (
       <div className="home--wrapper">
         <Header toggleNavbar={this.toggleNavbar} />
-        <div
-          className={navbarOpen ? "navbar--wrapper open" : "navbar--wrapper"}
-        >
-          {navbarOpen ? <NavBar /> : null}
-        </div>
         <div className="map--container">
           <GoogleMap lat={lat} lng={lng} />
         </div>
@@ -55,15 +54,22 @@ export default class HomePage extends Component {
             placeholder={"Latitude"}
             type="number"
             inputRef={input => (this.latInput = input)}
+            onKeyPress={e => this.handleEnterKeyPress(e)}
           />
           <br />
           <TextBox
             placeholder={"Longitude"}
             type="number"
             inputRef={input => (this.lngInput = input)}
+            onKeyPress={e => this.handleEnterKeyPress(e)}
           />
           <br />
           <button onClick={this.setMapLocation}>Set location</button>
+        </div>
+        <div
+          className={navbarOpen ? "navbar--wrapper open" : "navbar--wrapper"}
+        >
+          {navbarOpen ? <NavBar /> : null}
         </div>
       </div>
     );
