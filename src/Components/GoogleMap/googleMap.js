@@ -1,28 +1,30 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 const mapStyles = {
-    width: '400px',
-    height: '400px',
-    left:'50%',
-    top:'40%',
-    transform:'translate(-50%, -50%)'
-  };
+  width: "400px",
+  height: "400px",
+  position: "relative",
+  margin: "20px auto"
+};
 export class GoogleMap extends Component {
   render() {
+    const { lat, lng } = this.props;
     return (
       <Map
         google={this.props.google}
         zoom={14}
         style={mapStyles}
         initialCenter={{
-          lat: -1.2884,
-          lng: 36.8233
+          lat,
+          lng
         }}
-      />
-      
+        center={{lat,lng}}
+      >
+        <Marker position={{ lat, lng }} />
+      </Map>
     );
   }
 }
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyAUhkbNC-dTqjNCOz_chR_driQfi1IvKjI'
-  })(GoogleMap);
+  apiKey: "AIzaSyAUhkbNC-dTqjNCOz_chR_driQfi1IvKjI"
+})(GoogleMap);

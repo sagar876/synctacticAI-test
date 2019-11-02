@@ -1,11 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class TextBox extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+  render() {
+    const { type, placeholder } = this.props;
+    return (
+      <div>
+        <input
+          type={type}
+          placeholder={placeholder}
+          ref={this.props.inputRef}
+        />
+      </div>
+    );
+  }
 }
